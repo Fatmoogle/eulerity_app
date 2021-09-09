@@ -12,7 +12,7 @@ export default function Pet(props) {
         <div>
             <h2>Pet Name: {props.title}</h2>
             <h3>Description: {props.description}</h3>
-            <img  src={props.url} alt={props.title} width="500" height="500" onClick={() => settingActiveIds(props.id)}></img>
+            <img className={props.selectedDivs.includes(props.id) ? "border" : ""} src={props.url} alt={props.title} width="500" height="500" onClick={() => settingActiveIds(props.id)}></img>
             <br />
         </div>
     )

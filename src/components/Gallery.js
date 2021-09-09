@@ -37,15 +37,16 @@ export default function Gallery() {
         if(selectedDivs.includes(id)) {                     // Checks to see if state includes ID already, then removes it on click if true
             console.log(`Image ${id} Deselected`);
             let array = [...selectedDivs];
-            array.splice(id, 1);
+            let index = array.indexOf(id);
+            array.splice(index, 1);
             setSelectedDivs(array)
         } else {
             console.log(`Image ${id} Selected`)             // If no ID found, add it to the state array
             tempArray = [...selectedDivs]
             tempArray.push(id);
-            let mySet = new Set(tempArray)                  // Set allows value to ONLY occur once
-            let uniqueArray = [...mySet]                    // Converts mySet to an array instead of object
-            setSelectedDivs(uniqueArray)
+            // let mySet = new Set(tempArray)                  // Set allows value to ONLY occur once
+            // let uniqueArray = [...mySet]                    // Converts mySet to an array instead of object
+            setSelectedDivs(tempArray)
         }
     }
 
@@ -62,7 +63,7 @@ export default function Gallery() {
             <button onClick={() => handleClick()}>Download</button>
             {allPets.pets === undefined ? (<h1>Loading...</h1>) : (
                 filteredPets.map((pet) => {
-                    return <Pet title={pet.title} description={pet.description} url={pet.url} id={pet.id} key={pet.id} settingActiveIds={settingActiveIds} onClick={() => settingActiveIds(pet.id)}/>
+                    return <Pet title={pet.title} description={pet.description} url={pet.url} id={pet.id} key={pet.id} settingActiveIds={settingActiveIds} onClick={() => settingActiveIds(pet.id)} selectedDivs={selectedDivs}/>
                 })  
             )}
         </div>
