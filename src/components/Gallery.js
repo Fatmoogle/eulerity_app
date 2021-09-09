@@ -44,10 +44,26 @@ export default function Gallery() {
             console.log(`Image ${id} Selected`)             // If no ID found, add it to the state array
             tempArray = [...selectedDivs]
             tempArray.push(id);
-            // let mySet = new Set(tempArray)                  // Set allows value to ONLY occur once
-            // let uniqueArray = [...mySet]                    // Converts mySet to an array instead of object
+            // let mySet = new Set(tempArray)               // Set allows value to ONLY occur once
+            // let uniqueArray = [...mySet]                 // Converts mySet to an array instead of object
             setSelectedDivs(tempArray)
         }
+    }
+
+    const selectAll = (e) => {
+        e.preventDefault();
+        filteredPets.forEach(pet => {
+            tempArray.push(pet.id);
+        });
+        setSelectedDivs(tempArray);
+        console.log("Selected all images");
+    }
+
+    const clearSelection = (e) => {
+        e.preventDefault();
+        const emptyArray = [];
+        setSelectedDivs(emptyArray);
+        console.log("Cleared image selection");
     }
 
     return (
@@ -57,6 +73,9 @@ export default function Gallery() {
                 <div>
                     <label>Search Pets</label><br />
                     <input type="text" onChange={(e) => handleSearch(e)}/>
+                    <br/>
+                    <button onClick={(e) => selectAll(e)} >Select All</button>
+                    <button onClick={(e) => clearSelection(e)}>Clear Selection</button>
                 </div>
                 <br />
             </form>
