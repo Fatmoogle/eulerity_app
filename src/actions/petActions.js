@@ -32,6 +32,30 @@ export const fetchPets = () => dispatch => {
     })
 }
 
+// export async function downloadImages ({ dispatch, commit }, data) {
+//     try {
+//         commit("setDownloadingImage", true)
+//         const image = await dispatch("generateFile", data)
+//         // if (window.navigator && window.navigator.msSaveOrOpenBlop)
+
+//         const fileName = `${data.id}.png`
+//         const a = document.createElement("a")
+//         a.style.display = "none"
+//         document.body.appendChild(a)
+//         a.href = window.URL.createObjectURL(image)
+//         a.setAttribute("download", fileName)
+//         a.click()
+//         setTimeout(function () {
+//             window.URL.revokeObjectURL(a.href)
+//         }, 100)
+//         document.body.removeChild(a)
+//         commit("setDownloadingImage", false)
+//     } catch (error) {
+//         commit("setDownloadingImage", false)
+//         throw error
+//     }
+// }
+
 
 
 // export const addTravelPlan = (details) => ({
