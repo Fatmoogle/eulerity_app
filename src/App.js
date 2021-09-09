@@ -6,13 +6,13 @@ import { fetchPets } from "./actions/petActions";
 
 function App() {
     
-    const state = useSelector((state) => state.pets) // Returns entire state
-    
-    const dispatch = useDispatch(); 
-    
-    useEffect(() => {
-      dispatch(fetchPets())
-    }, [])
+  const state = useSelector((state) => state.pets) // Returns entire state
+  
+  const dispatch = useDispatch(); 
+  
+  useEffect(() => {
+    dispatch(fetchPets())
+  }, [])
     
   return (
     <div className="App">
