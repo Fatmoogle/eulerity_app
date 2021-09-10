@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 export default function Nav() {
@@ -15,8 +16,12 @@ export default function Nav() {
                 <span />
             </Hamburger>
             <Menu isOpen={isOpen}>
-                <MenuLink href="">About Me</MenuLink>
-                <MenuLink href="">Gallery</MenuLink>
+                <Link to="/about" style={{ textDecoration: "none"}}>
+                    <MenuLink>About Me</MenuLink>
+                </Link>
+                <Link to="/" style={{ textDecoration: "none"}}>
+                    <MenuLink>Gallery</MenuLink>
+                </Link>
             </Menu> 
         </Navbar>
     )
@@ -29,6 +34,7 @@ const Navbar = styled.div`
     align-items: center;
     flex-wrap: wrap;
     background: white;
+    font-size: 2em;
 `;
 
 const Hamburger = styled.div`
@@ -49,14 +55,14 @@ const Hamburger = styled.div`
     }
 `;
 
-const MenuLink = styled.a`
+const MenuLink = styled.div`
     padding: 1rem 2rem;
     cursor: pointer;
     text-align: center;
-    text-decoration: none;
     color: #67bc98;
     transition: all 0.2s ease-in;
     font-size: 0.9rem;
+    text-decoration: none;
 
     &:hover {
         color: #7b7fda;
@@ -79,7 +85,7 @@ const Menu = styled.div`
     }
 `;
 
-const Logo = styled.a`
+const Logo = styled.div`
     padding: 1rem 0;
     color: #7b7fda;
     text-decoration: none;
