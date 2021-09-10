@@ -3,6 +3,10 @@ import { useEffect } from 'react';
 import Gallery from './components/Gallery';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPets } from "./actions/petActions";
+import Nav from './components/Nav';
+import About from './components/About';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
 
 function App() {
     
@@ -13,17 +17,31 @@ function App() {
   useEffect(() => {
     dispatch(fetchPets())
   }, [])
-    
+
   return (
-    <div className="App">
-      {!state.pets ? (<h1>Loading...</h1>) : (
-        <div>
-          <h1>Code Challenge</h1>
-          <Gallery />
+    
+    <Router>
+      <Container>
+        <div className="App">
+          {!state.pets ? (<h1>Loading...</h1>) : (
+            <div>
+              <Nav />
+              <Switch>
+                <Route path="/" exact component={Gallery} />
+                <Route path="/about" component={About} />
+              </Switch>
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </Container>
+    </Router>
   );
 }
+
+
+const Container = styled.div`
+background: #67bc98;
+height: 100%;
+`;
 
 export default App;
