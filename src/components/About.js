@@ -7,38 +7,12 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import { useStyles } from './styles/materialStyles/AboutStyles.ui';
+import profilePic from '../assets/images/Elgoomtaf2.png';
 
 
-export default function About() {
-    const useStyles = makeStyles({
-        gitHub: {
-            fontSize: '90px',
-            cursor: 'pointer',
-            // "&:hover": {
-            //     background: "#54a0ff",
-            //     opacity: ".8"
-            // }
-            title: 'My GitHub Profile'
-        },
-        portfolio: {
-            fontSize: '90px',
-            color: '#D6A2E8',
-            cursor: 'pointer'
-        },
-        linkedIn: {
-            fontSize: '90px',
-            color: '#2867B2',
-            cursor: 'pointer'
-            // color: "#54a0ff"
-        },
-        typographyClass: {
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-around'
-        }
-    });
-
-    const classes = useStyles();
+export default function About(props) {
+    const classes = useStyles(props);                       // Material-UI Styling
 
     return (
         <MainContainer>
@@ -48,7 +22,7 @@ export default function About() {
             </Personal>
             <Main>
                 <ImgContainer>  
-                    <img src="" alt="AlexPicture" width="250px" height="300px" />
+                    <img src={profilePic} alt="AlexPicture"/>
                 </ImgContainer>
                 <AboutMe>
                     <Titles>
@@ -83,7 +57,6 @@ export default function About() {
 
 const MainContainer = styled.div`
     background-color: white;
-    height: 100vh;
     max-width: 100vw;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -97,6 +70,9 @@ const Personal = styled.div`
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 `;
 
 const Name = styled.h1`
@@ -104,6 +80,10 @@ const Name = styled.h1`
     font-weight: 900;
     letter-spacing: 5px;
     font-size: 70px;
+
+    @media (max-width: 600px) {
+       font-size: 35px;
+    }
 `;
 
 const Title = styled.h2`
@@ -111,7 +91,11 @@ const Title = styled.h2`
     font-weight: 100;
     font-size: 40px;
     letter-spacing: 6px;
-    color: #55E6C1;
+    color: #1B9CFC;
+
+    @media (max-width: 600px) {
+       font-size: 15px;
+    }
     
 `;
 
@@ -120,32 +104,57 @@ const ImgContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 600px) {
+            padding: 0;
+        }
+
+    img {
+        width:250px;
+        height: 300px;
+
+        @media (max-width: 600px) {
+            width: 150px;
+            height: 200px;
+            
+        }
+
+    }
 `;
 
 const Main = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
 `;
 
 const AboutMe = styled.p`
     width: 80%;
     padding: 10px;
-
+    text-align: center;
 `;
 
 const Titles = styled.h1`
     font-size: 50px;
     font-weight: 100;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     color: #1B9CFC;
+
+    @media (max-width: 600px) {
+            font-size: 40px;
+        }
 `;
 
 const Bio = styled.p`
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 100;
     font-size: 20px;
+
+    @media (max-width: 600px) {
+            font-size: 18px;
+        }
 `;
 
 const Contact = styled.div`
@@ -163,7 +172,5 @@ const Contact = styled.div`
 
 const BtnContainer = styled.div`
     width: 50%;
-    
-
 `;
 

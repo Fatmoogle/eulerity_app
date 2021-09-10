@@ -1,3 +1,5 @@
+// This file is used to export the Styled Components styles for Nav.js
+
 import styled from "styled-components";
 
 export const Navbar = styled.div`
@@ -6,7 +8,7 @@ export const Navbar = styled.div`
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    background: white;
+    background: #dfe4ea;
     font-size: 2em;
 `;
 

@@ -40,9 +40,8 @@ function App() {
 
 
 const Container = styled.div`
-background: #ced6e0;
-height: 100%;
-
+  background: #ced6e0;
+  height: 100%;
 `;
 
 export default App;

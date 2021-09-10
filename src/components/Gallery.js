@@ -7,33 +7,17 @@ import Button from '@material-ui/core/Button';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import SearchIcon from '@material-ui/icons/Search';
 import { Wrapper, Title, SubTitle, SearchArea, Form, FormContent, ButtonContainer, PetContainer } from './styles/GalleryStyles';
+import { useStyles } from './styles/materialStyles/GalleryStyles.ui';
 
 
-export default function Gallery() {
+export default function Gallery(props) {
     const [filteredPets, setFilteredPets] = useState([]);
     const [selectedDivs, setSelectedDivs] = useState([]);
 
-    const useStyles = makeStyles({
-        buttonStyle: {
-            color: "white",
-            background: "#54a0ff",
-            
-            "&:hover": {
-                background: "#54a0ff",
-                opacity: ".8"
-            }
-        },
-        searchIcon: {
-            fontSize: '40px',
-            color: "#54a0ff"
-        },
-    });
-
-    const classes = useStyles();
+    const classes = useStyles(props);                         // Material-UI Styling
 
     let tempArray = [];
     
-
     useEffect(() => {
         setFilteredPets(allPets.pets)
     }, [])
@@ -108,7 +92,6 @@ export default function Gallery() {
         })
     }
     
-
     return (
         <Wrapper>
             <Title>PETS<span>Luv</span></Title>

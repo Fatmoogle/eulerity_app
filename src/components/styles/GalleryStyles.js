@@ -1,3 +1,5 @@
+// This file is used to export the Styled Components styles for Gallery.js
+
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -45,7 +47,7 @@ export const SubTitle = styled.div`
     font-weight: 800;
 
     @media (max-width: 500px) {
-        font-size: 20px;
+        font-size: 15px;
     }
 `;
 
