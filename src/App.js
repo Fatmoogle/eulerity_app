@@ -40,7 +40,7 @@ function App() {
 
 
 const Container = styled.div`
-background: #67bc98;
+/* background: #67bc98; */
 height: 100%;
 `;
 
