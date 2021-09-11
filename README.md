@@ -7,6 +7,8 @@ PetsLuv Gallery
   - [Questions](#Questions)
 
   ## Description
+  PetsLuv is a gallery app designed to let users click images to select and download them. What's not to love?
+  
   This web application was created with ReactJs, React-Redux, React-Router-Dom, Material-UI, and Styled-Components.
 
   ## Process
