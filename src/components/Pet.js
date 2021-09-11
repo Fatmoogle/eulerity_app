@@ -15,8 +15,7 @@ export default function Pet(props) {
     return (
         <Wrapper onClick={() => settingActiveIds(props.id)}>
             <CheckCircleOutlineIcon className={props.selectedDivs.includes(props.id) ? classes.Checked : classes.NotChecked}/>
-            <PetImg src={props.url} alt={props.title} 
-            width="250" height="250"></PetImg>
+            <PetImg src={props.url} alt={props.title}></PetImg>
             <PetOverlay>
                 <PetTitle>{props.title}</PetTitle>
                 <PetDescription>{props.description}</PetDescription>

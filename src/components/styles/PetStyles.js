@@ -55,5 +55,7 @@ export const PetDescription = styled.p`
 `;
 
 export const PetImg = styled.img`
-
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
 `;
