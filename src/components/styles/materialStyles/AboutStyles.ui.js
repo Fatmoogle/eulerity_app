@@ -1,7 +1,6 @@
 // This file is used to export the Material-UI component styling for About.js
 
 import { makeStyles } from '@material-ui/core/styles';
-import transitions from '@material-ui/core/styles/transitions';
 
 const useStyles = makeStyles({
     gitHub: {

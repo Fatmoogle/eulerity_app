@@ -1,6 +1,4 @@
 import React from 'react'
-import styled from 'styled-components';
-import {  makeStyles } from '@material-ui/core';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import { useStyles } from './styles/materialStyles/PetStyles.ui';
 import { Wrapper, PetOverlay, PetTitle, PetDescription, PetImg } from './styles/PetStyles';

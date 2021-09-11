@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import Pet from './Pet'
 import { saveAs } from 'file-saver';
-import { makeStyles, InputBase } from '@material-ui/core';
+import { InputBase } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import SearchIcon from '@material-ui/icons/Search';
