@@ -77,7 +77,7 @@ export default function Gallery(props) {
 
         for(let i = 0; i < allPets.length; i++) {
             if(allSelectedPets.includes(petIdArray[i])) {
-                tempPetArray.push(allPets[i])
+                tempPetArray.push(allPets[i])             // Takes the id of the pet, and returns the whole pet object, not just the id.
             }
         }
 
