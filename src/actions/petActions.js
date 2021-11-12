@@ -7,7 +7,7 @@ export const fetchPets = () => dispatch => {
     dispatch({
         type: AWAITING_PETS
     });
-    axios.get('http://eulerity-hackathon.appspot.com/pets')
+    axios.get('https://eulerity-hackathon.appspot.com/pets')
     .then(res => {
         if(res.error) {
             throw(res.error);
